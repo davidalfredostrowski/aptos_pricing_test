@@ -303,6 +303,86 @@ ubuntu@ip-172-31-35-62:~$ aptos account fund-with-faucet --account default
 ubuntu@ip-172-31-35-62:~$
 
 
+ubuntu@ip-172-31-35-62:~/aptos-core/aptos-move/move-examples/hello_blockchain$ /home/ubuntu/.local/bin/aptos    move compile --named-addresses overmind=0xf55cd6df0a44ae71196a932b6b1f9dea475de17e09d891fac75b22ac80a9318c
+Compiling, may take a little while to download git dependencies...
+INCLUDING DEPENDENCY AptosFramework
+INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING Examples
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:5:14
+  │
+5 │     use std::signer;
+  │              ^^^^^^ Unused 'use' of alias 'signer'. Consider removing it
+
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:8:14
+  │
+8 │     use std::table::{Self, Table};
+  │              ^^^^^ Unused 'use' of alias 'table'. Consider removing it
+
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:9:26
+  │
+9 │     use aptos_framework::timestamp;
+  │                          ^^^^^^^^^ Unused 'use' of alias 'timestamp'. Consider removing it
+
+warning[W09001]: unused alias
+   ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:10:26
+   │
+10 │     use aptos_framework::account::{Self, SignerCapability};
+   │                          ^^^^^^^ Unused 'use' of alias 'account'. Consider removing it
+
+error[E04007]: incompatible types
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:131:67
+    │
+131 │         public fun get_price(pair: String): Price acquires PriceBoard {
+    │                                             ----- Expected: '(overmind=0xF55CD6DF0A44AE71196A932B6B1F9DEA475DE17E09D891FAC75B22AC80A9318C)::price_oracle::Price'
+    │ ╭─────────────────────────────────────────────────────────────────────^
+    │ │ ╭───────────────────────────────────────────────────────────────────'
+132 │ │ │
+133 │ │ │     }
+    │ ╰─│─────^ Invalid return expression
+    │   ╰─────' Given: '()'
+
+error[E04007]: incompatible types
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:143:25
+    │
+142 │         public fun get_price_no_older_than(pair: String, maximum_age_seconds: u64): Price
+    │                                                                                     ----- Expected: '(overmind=0xF55CD6DF0A44AE71196A932B6B1F9DEA475DE17E09D891FAC75B22AC80A9318C)::price_oracle::Price'
+143 │         acquires PriceBoard {
+    │ ╭───────────────────────────^
+    │ │ ╭─────────────────────────'
+144 │ │ │
+145 │ │ │     }
+    │ ╰─│─────^ Invalid return expression
+    │   ╰─────' Given: '()'
+
+error[E04007]: incompatible types
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:154:81
+    │
+154 │         public fun get_price_unsafe(pair: String): (Price, u64) acquires PriceBoard {
+    │                                                    ------------ Expected: '((overmind=0xF55CD6DF0A44AE71196A932B6B1F9DEA475DE17E09D891FAC75B22AC80A9318C)::price_oracle::Price, u64)'
+    │ ╭───────────────────────────────────────────────────────────────────────────────────^
+    │ │ ╭─────────────────────────────────────────────────────────────────────────────────'
+155 │ │ │
+156 │ │ │     }
+    │ ╰─│─────^ Invalid return expression
+    │   ╰─────' Given: '()'
+
+{
+  "Error": "Move compilation failed: Compilation error"
+}
+ubuntu@ip-172-31-35-62:~/aptos-core/aptos-move/move-examples/hello_blockchain$
+
+
+
+
+
+
+
+
+
 
 
 
