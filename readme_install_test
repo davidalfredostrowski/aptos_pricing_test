@@ -472,6 +472,137 @@ error[E02002]: unnecessary or extraneous item
 
 
 
+# so i mmade a change: 
+ubuntu@ip-172-31-35-62:~/aptos-core/aptos-move/move-examples/hello_blockchain/sources$ /home/ubuntu/.local/bin/aptos    move compile --named-addresses overmind=0xf55cd6df0a44ae71196a932b6b1f9dea475de17e09d891fac75b22ac80a9318c
+Compiling, may take a little while to download git dependencies...
+INCLUDING DEPENDENCY AptosFramework
+INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING Examples
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:5:14
+  │
+5 │     use std::signer;
+  │              ^^^^^^ Unused 'use' of alias 'signer'. Consider removing it
+
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:8:14
+  │
+8 │     use std::table::{Self, Table};
+  │              ^^^^^ Unused 'use' of alias 'table'. Consider removing it
+
+warning[W09001]: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:9:26
+  │
+9 │     use aptos_framework::timestamp;
+  │                          ^^^^^^^^^ Unused 'use' of alias 'timestamp'. Consider removing it
+
+warning[W09001]: unused alias
+   ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:10:26
+   │
+10 │     use aptos_framework::account::{Self, SignerCapability};
+   │                          ^^^^^^^ Unused 'use' of alias 'account'. Consider removing it
+
+warning[W09002]: unused variable
+   ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:98:21
+   │
+98 │     fun init_module(admin: &signer) {
+   │                     ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+
+warning[W09002]: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:115:9
+    │
+115 │         admin: &signer,
+    │         ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+
+warning[W09002]: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:116:9
+    │
+116 │         pair: String,
+    │         ^^^^ Unused parameter 'pair'. Consider removing or prefixing with an underscore: '_pair'
+
+warning[W09002]: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:117:9
+    │
+117 │         price: u128,
+    │         ^^^^^ Unused parameter 'price'. Consider removing or prefixing with an underscore: '_price'
+
+warning[W09002]: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:118:9
+    │
+118 │         confidence: u128
+    │         ^^^^^^^^^^ Unused parameter 'confidence'. Consider removing or prefixing with an underscore: '_confidence'
+
+warning: unused alias
+   ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:10:26
+   │
+10 │     use aptos_framework::account::{Self, SignerCapability};
+   │                          ^^^^^^^ Unused 'use' of alias 'account'. Consider removing it
+
+warning: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:5:14
+  │
+5 │     use std::signer;
+  │              ^^^^^^ Unused 'use' of alias 'signer'. Consider removing it
+
+warning: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:8:14
+  │
+8 │     use std::table::{Self, Table};
+  │              ^^^^^ Unused 'use' of alias 'table'. Consider removing it
+
+warning: unused alias
+  ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:9:26
+  │
+9 │     use aptos_framework::timestamp;
+  │                          ^^^^^^^^^ Unused 'use' of alias 'timestamp'. Consider removing it
+
+warning: unused variable
+   ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:98:21
+   │
+98 │     fun init_module(admin: &signer) {
+   │                     ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+
+warning: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:115:9
+    │
+115 │         admin: &signer,
+    │         ^^^^^ Unused parameter 'admin'. Consider removing or prefixing with an underscore: '_admin'
+
+warning: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:118:9
+    │
+118 │         confidence: u128
+    │         ^^^^^^^^^^ Unused parameter 'confidence'. Consider removing or prefixing with an underscore: '_confidence'
+
+warning: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:116:9
+    │
+116 │         pair: String,
+    │         ^^^^ Unused parameter 'pair'. Consider removing or prefixing with an underscore: '_pair'
+
+warning: unused variable
+    ┌─ /home/ubuntu/aptos-core/aptos-move/move-examples/hello_blockchain/sources/overland.move:117:9
+    │
+117 │         price: u128,
+    │         ^^^^^ Unused parameter 'price'. Consider removing or prefixing with an underscore: '_price'
+
+{
+  "Result": [
+    "f55cd6df0a44ae71196a932b6b1f9dea475de17e09d891fac75b22ac80a9318c::price_oracle"
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
