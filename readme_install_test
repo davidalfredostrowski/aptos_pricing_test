@@ -713,6 +713,10 @@ package size 3236 bytes
   "Error": "Simulation failed with status: Move abort in 0x1::code: EMODULE_MISSING(0x4): Cannot delete a module that was published in the same package"
 }
 
+package size 3245 bytes
+{
+  "Error": "Simulation failed with status: Move abort in 0x1::code: EMODULE_MISSING(0x4): Cannot delete a module that was published in the same package"
+}
 
 
 
