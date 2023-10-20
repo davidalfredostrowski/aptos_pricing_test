@@ -720,7 +720,79 @@ package size 3245 bytes
 
 
 
+struggling with 'duplicate module' error: 
 
+Here is a resource that does not have a means of defining: 
+
+Aptos move compilation error: Duplicate definition for module
+Asked 4 months ago
+Modified 4 months ago
+Viewed 74 times
+0
+
+I set up an Aptos local testnet and try to publish a module using Aptos move CLI, but it always fail on compilation with an error: duplicate declaration, item, or annotation. Duplicate definition for module.
+However, the move source code only contains one module and I never publish any module on this account before...
+Many thanks!!
+
+My module is like this:
+
+module my_addr::repeated_call{
+    fun do_nothing(){
+    }
+    public entry fun repeat_n_calls(n: u64){
+        let i = 0;
+        while(i < n){
+            i = i + 1;
+            do_nothing();
+        }
+    }
+}
+and the Move.toml:
+
+[package]
+name = 'repeated_call'
+version = '1.0.0'
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+[addresses]
+# this is my account address
+my_addr = '0x4050d8d4b513983cb4cb917d18cbc68274010ae6ce09fa826eca8caf9ebf7dd1'
+error message:
+
+error[E02001]: duplicate declaration, item, or annotation
+  ┌─ /home/featurize/move-packages/repeated_call/sources/repeated_call.move:1:17
+  │
+1 │ module my_addr::repeated_call{
+  │                 ^^^^^^^^^^^^^
+  │                 │
+  │                 Duplicate definition for module '(my_addr=0x4050D8D4B513983CB4CB917D18CBC68274010AE6CE09FA826ECA8CAF9EBF7DD1)::repeated_call'
+  │                 Module previously defined here, with '(my_addr=0x4050D8D4B513983CB4CB917D18CBC68274010AE6CE09FA826ECA8CAF9EBF7DD1)::repeated_call'
+
+{
+  "Error": "Move compilation failed: Compilation error"
+}
+No module published on this account before:
+
+aptos account list --query modules --account 0x4050d8d4b513983cb4cb917d18cbc68274010ae6ce09fa826eca8caf9ebf7dd1 --profile user0
+{
+  "Result": []
+}
+aptos-move 1.0.14
+rustc 1.66.1 (90743e729 2023-01-10)
+Ubuntu 20.04.2 LTS
+aptosmove-lang
+Share
+Improve this question
+Follow
+asked May 28 at 10:03
+Toniiiiii's user avatar
+Toniiiiii
+1
+Do you have multiple files in your sources/ directory? This error seems like the kind of error you get when you define the same module multiple times in the same package. – 
+Daniel Porteous
+ May 30 at 18:00 
 
 
 
