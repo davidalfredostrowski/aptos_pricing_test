@@ -296,4 +296,14 @@ Aptos CLI is now set up for account 0xf55cd6df0a44ae71196a932b6b1f9dea475de17e09
 
 
 
-                                                                                                 
+ubuntu@ip-172-31-35-62:~$ aptos account fund-with-faucet --account default
+{
+  "Result": "Added 100000000 Octas to account 0xf55cd6df0a44ae71196a932b6b1f9dea475de17e09d891fac75b22ac80a9318c"
+}
+ubuntu@ip-172-31-35-62:~$
+
+
+
+
+
+
