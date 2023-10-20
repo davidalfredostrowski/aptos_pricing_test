@@ -825,6 +825,12 @@ Aptos CLI is now set up for account 0xe569bf8858f15c80e25eab8a774b02823f11265c7a
 
 
 
+ubuntu@ip-172-31-35-62:~/aptos-core/aptos-move/move-examples/hello_blockchain$ /home/ubuntu/.local/bin/aptos    move run --function-id 'default::price_oracle_four::publish' --args u64:2
+{
+  "Error": "Simulation failed with status: Execution failed in 0xe569bf8858f15c80e25eab8a774b02823f11265c7a1562f343f4432246b3ae96::price_oracle_four::publish at code offset 3"
+}
+ubuntu@ip-172-31-35-62:~/aptos-core/aptos-move/move-examples/hello_blockchain$
+
 
 
 
