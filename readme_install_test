@@ -847,6 +847,8 @@ ubuntu@ip-172-31-35-62:~/aptos-core/apto
 
 
 
+
+
 /home/ubuntu/.local/bin/aptos key generate --output-file test
 Use the key for ‘force’ a new user address. 
 /home/ubuntu/.local/bin/aptos    move compile --named-addresses overmind=0xf55cd6df0a44ae71196a932b6b1f9dea475de17e09d891fac75b22ac80a9318c
